@@ -42,6 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 			"/newUser",
 			"/forgetPassword",
 //			"/myAccount",
+			"/bookshelf",
+			
 			"/404"
 			 
 	};

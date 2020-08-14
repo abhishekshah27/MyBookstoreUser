@@ -1,11 +1,16 @@
 package com.MyBookstoreUser.controller;
 
+import java.security.Principal;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -19,12 +24,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.MyBookstoreUser.model.Book;
 import com.MyBookstoreUser.model.User;
 import com.MyBookstoreUser.model.security.PasswordResetToken;
 import com.MyBookstoreUser.model.security.Role;
 import com.MyBookstoreUser.model.security.UserRole;
+import com.MyBookstoreUser.service.BookService;
 import com.MyBookstoreUser.service.UserService;
 import com.MyBookstoreUser.service.impl.UserSecurityService;
 import com.MyBookstoreUser.utility.MailConstructor;
@@ -47,7 +55,8 @@ public class HomeController {
 	@Autowired
 	private MailConstructor mailConstructor;
 	
-	
+	@Autowired
+	private BookService bookService;
 	
 	@GetMapping("/")
 	public String index()
@@ -180,8 +189,18 @@ public class HomeController {
 	}
 	
 	
-	@GetMapping("/bookshelf")
-	public String bookshelf() {
+	@RequestMapping("/bookshelf")
+	public String bookshelf(Model model, Principal principal) {
+		if(principal != null) {
+			String username = principal.getName();
+			User user = userService.findByUsername(username);
+			model.addAttribute("user", user);
+		}
+		
+		List<Book> bookList = bookService.findAll();
+		model.addAttribute("bookList", bookList);
+		model.addAttribute("activeAll",true);
+		
 		return "bookshelf";
 	}
 	
@@ -191,4 +210,22 @@ public class HomeController {
 	{
 		return "404";
 	}
+	
+	@RequestMapping("/bookDetail")
+	public String bookDetail(
+			@PathParam("id") Long id, Model model) 
+	{
+//		Optional<Book> book = bookService.findOne(id);
+//		model.addAttribute("book", book);
+		
+		model.addAttribute("book", bookService.findOne(id).orElse(null));
+		
+		List<Integer> qtyList = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+		
+		model.addAttribute("qtyList", qtyList);
+		model.addAttribute("qty", 1);
+		
+		return "bookDetail";
+	}
+
 }

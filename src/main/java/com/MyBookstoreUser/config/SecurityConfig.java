@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 			"/forgetPassword",
 //			"/myAccount",
 			"/bookshelf",
-			
+			"/bookDetail",
 			"/404"
 			 
 	};

@@ -2,6 +2,7 @@ package com.MyBookstoreUser.model;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -40,12 +41,18 @@ public class User implements UserDetails{
 	private String phone;
 	private boolean enabled=true;
 	
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	private List<UserShipping> userShippingList;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	private List<UserPayment> userPaymentList;
+	
+	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnore
 	private Set<UserRole> userRoles = new HashSet<>();
 
-	
-	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Set<GrantedAuthority> authorites = new HashSet<>();

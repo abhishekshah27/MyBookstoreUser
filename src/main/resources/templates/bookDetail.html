@@ -51,7 +51,7 @@
 								</span> -->
 								
 								<div class="availability">
-	                               	<span th:if="*{book.inStockNumber&gt;10}">In Stock</span>
+	                               	<span th:if="*{book.inStockNumber&gt;9}">In Stock</span>
 	                                <span th:if="*{book.inStockNumber&lt;10 and book.inStockNumber&gt;0}"> Hurry up, Only <span th:text="${book.inStockNumber}"> </span> left in stock!</span>
 	                                <span th:if="*{book.inStockNumber==0}">Out of Stock</span>
 	                            </div>

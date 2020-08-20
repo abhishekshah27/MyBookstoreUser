@@ -38,14 +38,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 			"/lib/**",
 			"/venobox/**",
 			"/",
+			"/bookshelf",
+			"/about",
+			"/contact",
 			"/login",
 			"/newUser",
 			"/forgetPassword",
-//			"/myAccount",
-			"/bookshelf",
 			"/bookDetail/**",
-			"/404"
-			 
+			"/searchByCategory",
+			"/searchBook"
+//			"/badRequestPage"
 	};
 	
 	

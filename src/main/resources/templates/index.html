@@ -25,11 +25,11 @@
 					</div>
 				<!-- layer 3 -->
  				<div class="layer-3">
-						<a th:href="@{/all-books}" class="title-3">SEE MORE</a>
+						<a th:href="@{/bookshelf}" class="title-3">SEE MORE</a>
 					</div> 
 				<!-- layer 4 -->
 				<div class="layer-4">
-					<form action="#" class="title-4">
+					<form th:action="@{/searchBook}" method="POST" class="title-4">
 						<input type="text" name="keyword" placeholder="Enter your book title here">
 						<button type="submit">
 							<i class="fa fa-search"></i>
@@ -49,11 +49,11 @@
 					</div>
 				<!-- layer 3 -->
 				<div class="layer-3">
-						<a th:href="@{/all-books}" class="title-3">SEE MORE</a>
+						<a th:href="@{/bookshelf}" class="title-3">SEE MORE</a>
 				</div> 
 				<!-- layer 4 -->
 				<div class="layer-4">
-					<form action="#" class="title-4">
+					<form th:action="@{/searchBook}" method="POST" class="title-4">
 						<input type="text" name="keyword"  placeholder="Enter your book title here">
 						<button type="submit">
 							<i class="fa fa-search"></i>

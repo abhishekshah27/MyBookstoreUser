@@ -202,7 +202,8 @@ body {
 }
 .header-right li a {
   display: block;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight:bold;
   position: relative;
 }
 .cart-product {

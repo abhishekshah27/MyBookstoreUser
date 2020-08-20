@@ -1,5 +1,6 @@
 package com.MyBookstoreUser.service;
 
+import java.util.Optional;
 import java.util.Set;
 
 import com.MyBookstoreUser.model.User;
@@ -19,6 +20,8 @@ public interface UserService {
 	
 	User findByEmail (String email);
 	
+	Optional<User> findById(Long id);
+	
 	User createUser(User user, Set<UserRole> userRoles) throws Exception;
 	
 	User save(User user);
@@ -26,7 +29,6 @@ public interface UserService {
 	void updateUserBilling(UserBilling userBilling, UserPayment userPayment, User user);
 	
 	void setUserDefaultPayment(Long userPaymentId, User user);
-	
 	
 	void updateUserShipping(UserShipping userShipping, User user);
 	

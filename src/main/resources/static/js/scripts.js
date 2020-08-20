@@ -34,6 +34,7 @@ $(document).ready(function(){
 		
 		$('#update-item-'+id).css('display', 'inline-block');
 	});
+	
 	$("#theSameAsShippingAddress").on('click', checkBillingAddress);
 	$("#txtConfirmPassword").keyup(checkPasswordMatch);
 	$("#txtNewPassword").keyup(checkPasswordMatch);

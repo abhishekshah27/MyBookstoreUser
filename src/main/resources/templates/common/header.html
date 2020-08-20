@@ -9,7 +9,7 @@
 <title>My Bookstore</title>
 
 <!-- favicon -->
-<link rel="shortcut icon" type="image/x-icon" href="img/faviconBook.ico">
+<link rel="shortcut icon" type="image/x-icon" th:href="@{/img/faviconBook.ico}">
 <!-- Place favicon.ico in the root directory -->
 <!-- Google Fonts -->
 <link
@@ -18,7 +18,7 @@
 
 <!-- all css here -->
 <!-- bootstrap v3.3.6 css -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 
 <!-- data table -->
 <link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet" />
@@ -26,32 +26,30 @@
 
 
 <!-- animate css -->
-<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" th:href="@{/css/animate.css}">
 <!-- jquery-ui.min css -->
-<link rel="stylesheet" href="css/jquery-ui.min.css">
+<link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}">
 <!-- meanmenu css -->
-<link rel="stylesheet" href="css/meanmenu.min.css">
+<link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
 <!-- Font-Awesome css -->
-<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
 <!-- pe-icon-7-stroke css -->
-<link rel="stylesheet" href="css/pe-icon-7-stroke.css">
+<link rel="stylesheet" th:href="@{/css/pe-icon-7-stroke.css}">
 <!-- Flaticon css -->
-<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" th:href="@{/css/flaticon.css}">
 <!-- venobox css -->
-<link rel="stylesheet" href="venobox/venobox.css" type="text/css"
-	media="screen" />
+<link rel="stylesheet" th:href="@{/venobox/venobox.css}" type="text/css" media="screen" />
 <!-- nivo slider css -->
-<link rel="stylesheet" href="lib/css/nivo-slider.css" type="text/css" />
-<link rel="stylesheet" href="lib/css/preview.css" type="text/css"
-	media="screen" />
+<link rel="stylesheet" th:href="@{/lib/css/nivo-slider.css}" type="text/css" />
+<link rel="stylesheet" th:href="@{/lib/css/preview.css}" type="text/css" media="screen" />
 <!-- owl.carousel css -->
-<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
 <!-- style css -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" th:href="@{/css/style.css}">
 <!-- responsive css -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" th:href="@{/css/responsive.css}">
 <!-- modernizr css -->
-<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+<script th:src="@{/js/vendor/modernizr-2.8.3.min.js}"></script>
 </head>
 <body>
 
@@ -63,7 +61,7 @@
 			<div class="row">
 				<div class="col-md-2 col-sm-6 col-xs-6">
 					<div class="header-logo">
-						<a th:href="@{/}"> <img src="img/logo.png" alt=""></a>
+						<a th:href="@{/}"> <img th:src="@{/img/logo.png}" alt=""></a>
 					</div>
 				</div>
 				<div class="col-md-1 col-sm-6 visible-sm  col-xs-6">
@@ -73,8 +71,8 @@
                                     <a href="login.html"><i class="flaticon-people"></i></a>
                                 </li> -->
 							<li class="shoping-cart">
-								<a href="cart.html">
-							 		<i	class="flaticon-shop"></i> <span>2</span>
+								<a th:href="@{/shoppingCart/cart}">
+							 		<i	class="flaticon-shop"></i> 
 								</a>
 							 <!-- <div class="add-to-cart-product">
                                         <div class="cart-product">
@@ -149,15 +147,6 @@
 								<li><a sec:authorize="isAuthenticated()" th:href="@{/myProfile}">MY PROFILE</a></li>
 								<li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">LOGOUT</a></li>
 
-								<li><a href="#">pages</a>
-									<ul class="sub-menu">
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a th:href="@{/myAccount}">My Account</a></li>
-										<li><a href="single-product.html">Single Product Page</a></li>
-										<li><a href="@{/404}">404 Page</a></li>
-									</ul>
-								</li>
-								
 							</ul>
 						</nav>
 					</div>
@@ -170,9 +159,11 @@
 							<!-- <li>
                                     <a href="login.html"><i class="flaticon-people"></i></a>
                                 </li> -->
-							<li class="shoping-cart"><a href="cart.html"> <i
-									class="flaticon-shop"></i> <span>2</span>
-							</a> <!-- <div class="add-to-cart-product">
+							<li class="shoping-cart">
+								<a th:href="@{/shoppingCart/cart}">
+							 		<i class="flaticon-shop"></i> 
+								</a> 
+							<!-- <div class="add-to-cart-product">
                                         <div class="cart-product">
                                             <div class="cart-product-image">
                                                 <a href="single-product.html">
@@ -227,7 +218,8 @@
                                                 <i class="fa fa-chevron-right"></i>
                                             </a>
                                         </div>
-                                    </div> --></li>
+                                    </div> -->
+                               </li>
 						</ul>
 					</div>
 				</div>
@@ -242,7 +234,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12">
-					<div class="mobile-menu">
+					<div class="mobile-menu">	
 						<nav id="dropdown">
 							<ul>
 							
@@ -255,16 +247,7 @@
 								
 								<li><a sec:authorize="isAuthenticated()" th:href="@{/myProfile}">MY PROFILE</a></li>
 								<li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">LOGOUT</a></li>
-
 								
-								<li><a href="#">pages</a>
-									<ul class="sub-menu">
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="single-product.html">Single Product Page</a></li>
-										<li><a href="404.html">404 Page</a></li>
-									</ul>
-								</li>
-	
 							</ul>
 						</nav>
 					</div>
@@ -286,14 +269,14 @@
 					<div class="col-md-6">
 						<div class="footer-bottom-left pull-left">
 							<p>
-								Copyright &copy; 2020 <span><a href="#">Online Book
+								Copyright &copy; 2020 <span><a th:href="@{/}">Online Book
 										Store</a></span>. All Rights Reserved.
 							</p>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="footer-bottom-right pull-right">
-							<img src="img/paypal.png" alt="">
+							<img th:src="@{/img/paypal.png}" alt="">
 						</div>
 					</div>
 				</div>
@@ -311,30 +294,23 @@
 
 
 
-
-
-
-
-
-
-
 <div th:fragment="body-bottom-scripts">
 	<!-- all js here -->
 	<!-- jquery latest version -->
-	<script src="js/vendor/jquery-1.12.0.min.js"></script>
+	<script th:src="@{/js/vendor/jquery-1.12.0.min.js}"></script>
 	<!-- bootstrap js -->
-	<script src="js/bootstrap.min.js"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
 	<!-- owl.carousel js -->
-	<script src="js/owl.carousel.min.js"></script>
+	<script th:src="@{/js/owl.carousel.min.js}"></script>
 	<!-- jquery-ui js -->
-	<script src="js/jquery-ui.min.js"></script>
+	<script th:src="@{/js/jquery-ui.min.js}"></script>
 	<!-- jquery Counterup js -->
-	<script src="js/jquery.counterup.min.js"></script>
-	<script src="js/waypoints.min.js"></script>
+	<script th:src="@{/js/jquery.counterup.min.js}"></script>
+	<script th:src="@{/js/waypoints.min.js}"></script>
 	<!-- jquery countdown js -->
-	<script src="js/jquery.countdown.min.js"></script>
+	<script th:src="@{/js/jquery.countdown.min.js}"></script>
 	<!-- jquery countdown js -->
-	<script type="text/javascript" src="venobox/venobox.min.js"></script>
+	<script type="text/javascript" th:src="@{/venobox/venobox.min.js}"></script>
 	
 	<!-- data table -->
 	<script th:src="@{/js/jquery.dataTables.min.js}"></script>
@@ -344,21 +320,21 @@
 	
 	
 	<!-- jquery Meanmenu js -->
-	<script src="js/jquery.meanmenu.js"></script>
+	<script th:src="@{/js/jquery.meanmenu.js}"></script>
 	<!-- wow js -->
-	<script src="js/wow.min.js"></script>
+	<script th:src="@{/js/wow.min.js}"></script>
 	<script>
 		new WOW().init();
 	</script>
 	<!-- scrollUp JS -->
-	<script src="js/jquery.scrollUp.min.js"></script>
+	<script th:src="@{/js/jquery.scrollUp.min.js}"></script>
 	<!-- plugins js -->
-	<script src="js/plugins.js"></script>
+	<script th:src="@{/js/plugins.js}"></script>
 	<!-- Nivo slider js -->
-	<script src="lib/js/jquery.nivo.slider.js" type="text/javascript"></script>
-	<script src="lib/home.js" type="text/javascript"></script>
+	<script th:src="@{/lib/js/jquery.nivo.slider.js}" type="text/javascript"></script>
+	<script th:src="@{/lib/home.js}" type="text/javascript"></script>
 	<!-- main js -->
-	<script src="js/main.js"></script>
+	<script th:src="@{/js/main.js}"></script>
 </div>
 
 

@@ -57,7 +57,7 @@ public class ShoppingCartController {
 						  Model model, Principal principal)
 	{
 		User user = userService.findByUsername(principal.getName());
-		book = bookService.findOne(book.getId()).orElse(null);
+		book = bookService.findOne(book.getId()).get();
 		
 		if (Integer.parseInt(qty) > book.getInStockNumber()) 
 		{
@@ -73,11 +73,16 @@ public class ShoppingCartController {
 	
 	@RequestMapping("/updateCartItem")
 	public String updateShoppingCart(@ModelAttribute("id") Long cartItemId,
-									 @ModelAttribute("qty") int qty)
+									 @ModelAttribute("qty") int qty,Model model)
 	{
-		CartItem cartItem = cartItemService.findById(cartItemId).orElse(null);
-		cartItem.setQty(qty);
-		cartItemService.updateCartItem(cartItem);
+		CartItem cartItem = cartItemService.findById(cartItemId).get();
+		if(qty>0) {
+			cartItem.setQty(qty);
+			cartItemService.updateCartItem(cartItem);
+		}
+		else {
+			return "forward:/shoppingCart/removeItem";
+		}
 		
 		return "forward:/shoppingCart/cart";
 	}
@@ -85,7 +90,7 @@ public class ShoppingCartController {
 	@RequestMapping("/removeItem")
 	public String removeItem(@RequestParam("id") Long id) 
 	{
-		cartItemService.removeCartItem(cartItemService.findById(id).orElse(null));
+		cartItemService.removeCartItem(cartItemService.findById(id).get());
 		
 		return "forward:/shoppingCart/cart";
 	}

@@ -95,7 +95,7 @@ public class CheckoutController {
 		if (cartItemList.size() == 0) 
 		{
 			model.addAttribute("emptyCart", true);
-			return "forward:/shoppintCart/cart";
+			return "forward:/shoppingCart/cart";
 		}
 
 		for (CartItem cartItem : cartItemList) 

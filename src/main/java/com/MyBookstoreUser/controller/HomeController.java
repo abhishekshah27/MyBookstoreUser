@@ -614,8 +614,9 @@ public class HomeController {
 		
 		currentUser.setFirstName(user.getFirstName());
 		currentUser.setLastName(user.getLastName());
-		currentUser.setUsername(user.getUsername());
-		currentUser.setEmail(user.getEmail());
+//		currentUser.setUsername(user.getUsername());
+//		currentUser.setEmail(user.getEmail());
+		currentUser.setPhone(user.getPhone());
 		
 		userService.save(currentUser);
 		
@@ -634,7 +635,7 @@ public class HomeController {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		model.addAttribute("orderList", user.getOrderList());
 		
-		return "myProfile";
+		return "redirect:/myProfile";
 	}
 
 	

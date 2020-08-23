@@ -424,10 +424,10 @@
 													<div class="form-group">
 														<label for="cardType">* Select Card Type:</label>
 														<select class="form-control" id="cardType" th:name="type" th:value="${userPayment.type}">
-															<option value="visa">Visa</option>
-															<option value="mastercard">Mastercard</option>
-															<option value="discover">Discover</option>
-															<option value="amex">American Express</option>
+															<option value="visa" th:selected="(${userPayment.type}=='visa')">Visa</option>
+															<option value="mastercard" th:selected="(${userPayment.type}=='mastercard')">Mastercard</option>
+															<option value="discover" th:selected="(${userPayment.type}=='discover')">Discover</option>
+															<option value="amex" th:selected="(${userPayment.type}=='amex')">American Express</option>
 														</select>
 													</div>
 													
@@ -463,36 +463,36 @@
 																<select class="form-control" name="expiryMonth" required="required"
 																	th:value="${userPayment.expiryMonth}">
 																	<option disabled="disabled">-- Month --</option>
-																	<option value="01">Jan (01)</option>
-																	<option value="02">Feb (02)</option>
-																	<option value="03">Mar (03)</option>
-																	<option value="04">Apr (04)</option>
-																	<option value="05">May (05)</option>
-																	<option value="06">June (06)</option>
-																	<option value="07">July (07)</option>
-																	<option value="08">Aug (08)</option>
-																	<option value="09">Sept (09)</option>
-																	<option value="10">Oct (10)</option>
-																	<option value="11">Nov (11)</option>
-																	<option value="12">Dec (12)</option>
+																	<option value="01" th:selected="(${userPayment.expiryMonth}=='01')">Jan (01)</option>
+																	<option value="02" th:selected="(${userPayment.expiryMonth}=='02')">Feb (02)</option>
+																	<option value="03" th:selected="(${userPayment.expiryMonth}=='03')">Mar (03)</option>
+																	<option value="04" th:selected="(${userPayment.expiryMonth}=='04')">Apr (04)</option>
+																	<option value="05" th:selected="(${userPayment.expiryMonth}=='05')">May (05)</option>
+																	<option value="06" th:selected="(${userPayment.expiryMonth}=='06')">June (06)</option>
+																	<option value="07" th:selected="(${userPayment.expiryMonth}=='07')">July (07)</option>
+																	<option value="08" th:selected="(${userPayment.expiryMonth}=='08')">Aug (08)</option>
+																	<option value="09" th:selected="(${userPayment.expiryMonth}=='09')">Sept (09)</option>
+																	<option value="10" th:selected="(${userPayment.expiryMonth}=='10')">Oct (10)</option>
+																	<option value="11" th:selected="(${userPayment.expiryMonth}=='11')">Nov (11)</option>
+																	<option value="12" th:selected="(${userPayment.expiryMonth}=='12')">Dec (12)</option>
 																</select>
 															</div>
-															
+
 															<div class="col-xs-6">
-																<select class="form-control" name="expiryYear"
+																<select class="form-control" th:name="expiryYear"
 																	th:value="${userPayment.expiryYear}">
 																	<option disabled="disabled">-- Year --</option>
-																	<option value="20">2020</option>
-																	<option value="21">2021</option>
-																	<option value="22">2022</option>
-																	<option value="23">2023</option>
-																	<option value="24">2024</option>
-																	<option value="25">2025</option>
-																	<option value="26">2026</option>
-																	<option value="27">2027</option>
-																	<option value="28">2028</option>
-																	<option value="29">2029</option>
-																	<option value="30">2030</option>
+																	<option value="20" th:selected="(${userPayment.expiryYear}=='20')">2020</option>
+																	<option value="21" th:selected="(${userPayment.expiryYear}=='21')">2021</option>
+																	<option value="22" th:selected="(${userPayment.expiryYear}=='22')">2022</option>
+																	<option value="23" th:selected="(${userPayment.expiryYear}=='23')">2023</option>
+																	<option value="24" th:selected="(${userPayment.expiryYear}=='24')">2024</option>
+																	<option value="25" th:selected="(${userPayment.expiryYear}=='25')">2025</option>
+																	<option value="26" th:selected="(${userPayment.expiryYear}=='26')">2026</option>
+																	<option value="27" th:selected="(${userPayment.expiryYear}=='27')">2027</option>
+																	<option value="28" th:selected="(${userPayment.expiryYear}=='28')">2028</option>
+																	<option value="29" th:selected="(${userPayment.expiryYear}=='29')">2029</option>
+																	<option value="30" th:selected="(${userPayment.expiryYear}=='30')">2030</option>
 																</select>
 															</div>
 															

@@ -38,7 +38,7 @@ public class OrderServiceImpl implements OrderService{
 	{
 		Order order = new Order();
 		order.setBillingAddress(billingAddress);
-		order.setOrderStatus("created");
+		order.setOrderStatus("ordered");
 		order.setPayment(payment);
 		order.setShippingAddress(shippingAddress);
 		order.setShippingMethod(shippingMethod);

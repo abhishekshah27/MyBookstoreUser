@@ -11,6 +11,7 @@ public class PaymentServiceImpl implements PaymentService{
 	
 	public Payment setByUserPayment(UserPayment userPayment, Payment payment) {
 		payment.setType(userPayment.getType());
+		payment.setCardName(userPayment.getCardName());
 		payment.setHolderName(userPayment.getHolderName());
 		payment.setCardNumber(userPayment.getCardNumber());
 		payment.setExpiryMonth(userPayment.getExpiryMonth());

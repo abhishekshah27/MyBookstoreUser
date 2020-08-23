@@ -92,29 +92,34 @@
 											<div class="row">
 												<div class="col-xs-6">
 													<label for="firstName">First Name</label> 
-													<input type="text" class="form-control" id="firstName" name="firstName" th:value="${user.firstName}" />
+													<input type="text" class="form-control" id="firstName" name="firstName" th:value="${user.firstName}" required="required"/>
 												</div>
 												<div class="col-xs-6">
 													<label for="lastName">Last Name</label> 
-													<input type="text" class="form-control" id="lastName" name="lastName" th:value="${user.lastName}" />
+													<input type="text" class="form-control" id="lastName" name="lastName" th:value="${user.lastName}" required="required"/>
 												</div>
 											</div>
 										</div>
 
 										<div class="form-group">
-											<label for="userName">Username</label>
-											<input type="text" class="form-control" id="userName" name="username" th:value="${user.username}" />
+											<label for="userName">* Username</label>
+											<input type="text" class="form-control" id="userName" name="username" th:value="${user.username}" disabled="disabled" />
 										</div>
 										
 										<div class="form-group">
 											<label for="email">* Email Address</label>
 											<input type="email" class="form-control" id="email" name="email" th:value="${user.email}" disabled="disabled"/>
-										</div> 
-	
-										<br>
+										</div>
 										
 										<div class="form-group">
-											<label for="currentPassword">Current Password</label>
+											<label for="phone">* Mobile Number</label>
+											<input type="tel" class="form-control" id="phone" name="phone" th:value="${user.phone}" required="required"/>
+										</div> 
+	
+										<hr style="color:#ffffff;height:5px;"/>
+										
+										<div class="form-group">
+											<label for="currentPassword">* Current Password</label>
 											<input type="password" class="form-control" id="currentPassword" name="password" th:value="${currentPassword}" />
 										</div>
 										<p style="color: #828282">Enter your current password.</p>
@@ -122,13 +127,13 @@
 										<br>
 										
 										<div class="form-group">
-											<label for="txtNewPassword">New Password</label>&nbsp;
+											<label for="txtNewPassword">* New Password</label>&nbsp;
 											<span id="checkPasswordMatch" style="color: red;"></span> 
 											<input type="password" class="form-control" id="txtNewPassword" name="newPassword" />
 										</div>
 
 										<div class="form-group">
-											<label for="txtConfirmPassword">Confirm New Password</label>
+											<label for="txtConfirmPassword">* Confirm New Password</label>
 											<input type="password" class="form-control" id="txtConfirmPassword" />
 										</div>
 										

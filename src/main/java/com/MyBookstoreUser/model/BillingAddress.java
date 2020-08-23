@@ -22,7 +22,7 @@ public class BillingAddress {
 	private String BillingAddressStreet2;
 	private String BillingAddressCity;
 	private String BillingAddressState;
-	private String BillingAddressCountry;
+	private String BillingAddressCountry="India";
 	private String BillingAddressZipcode;
 	
 	@OneToOne

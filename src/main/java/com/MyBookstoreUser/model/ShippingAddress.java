@@ -21,7 +21,7 @@ public class ShippingAddress {
 	private String ShippingAddressStreet2;
 	private String ShippingAddressCity;
 	private String ShippingAddressState;
-	private String ShippingAddressCountry;
+	private String ShippingAddressCountry="India";
 	private String ShippingAddressZipcode;
 	
 	@OneToOne

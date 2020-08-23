@@ -1,6 +1,7 @@
 package com.MyBookstoreUser.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Date orderDate;
-	private Date shippingDate;
+	private LocalDate shippingDate;
 	private String shippingMethod;
 	private String orderStatus;
 	private BigDecimal orderTotal;

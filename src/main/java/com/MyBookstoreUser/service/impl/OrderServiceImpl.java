@@ -1,5 +1,6 @@
 package com.MyBookstoreUser.service.impl;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
@@ -53,6 +54,18 @@ public class OrderServiceImpl implements OrderService{
 		
 		order.setCartItemList(cartItemList);
 		order.setOrderDate(Calendar.getInstance().getTime());
+		
+		LocalDate today = LocalDate.now();
+		LocalDate estimatedDeliveryDate;		
+		if (shippingMethod.equals("groundShipping")) 
+		{
+			estimatedDeliveryDate = today.plusDays(5);
+		} else
+		{
+			estimatedDeliveryDate = today.plusDays(3);
+		}
+		order.setShippingDate(estimatedDeliveryDate);
+		
 		order.setOrderTotal(shoppingCart.getGrandTotal());
 		shippingAddress.setOrder(order);
 		billingAddress.setOrder(order);

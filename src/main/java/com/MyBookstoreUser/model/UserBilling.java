@@ -25,7 +25,7 @@ public class UserBilling
 	private String userBillingStreet2;
 	private String userBillingCity;
 	private String userBillingState;
-	private String userBillingCountry;
+	private String userBillingCountry="India";
 	private String userBillingZipcode;
 	
 	@OneToOne(cascade=CascadeType.ALL)

@@ -83,37 +83,67 @@
 				<div class="banner-list">
 					<div class="col-md-4 col-sm-6">
 						<div class="single-banner">
-							<a href="#"> <img src="img/banner/book-1.jpg" alt="">
+							<a th:href="@{/bookDetail?id=1}">
+							<img th:src="#{adminPath}+@{/image/book/1}+'.jpg'" alt=""/>
 							</a>
-							<div class="price">
-								<span>$</span>160
-							</div>
 							<div class="banner-bottom text-center">
-								<a href="#">NEW RELEASE 2020</a>
+								<a th:href="@{/bookDetail?id=1}">TRENDING IN 2020</a>
 							</div>
 						</div>
 					</div>
+					
 					<div class="col-md-4 col-sm-6">
 						<div class="single-banner">
-							<a href="#"> <img src="img/banner/2.jpg" alt="">
+							<a th:href="@{/bookDetail?id=3}">
+							<img th:src="#{adminPath}+@{/image/book/3}+'.jpg'" alt=""/>
 							</a>
-							<div class="price">
-								<span>$</span>160
-							</div>
 							<div class="banner-bottom text-center">
-								<a href="#">NEW RELEASE 2020</a>
+								<a th:href="@{/bookDetail?id=3}">TRENDING IN 2020</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 hidden-sm">
+					
+					<div class="col-md-4 col-sm-6">
 						<div class="single-banner">
-							<a href="#"> <img src="img/banner/3.jpg" alt="">
+							<a th:href="@{/bookDetail?id=4}">
+							<img th:src="#{adminPath}+@{/image/book/4}+'.jpg'" alt=""/>
 							</a>
-							<div class="price">
-								<span>$</span>160
-							</div>
 							<div class="banner-bottom text-center">
-								<a href="#">NEW RELEASE 2020</a>
+								<a th:href="@{/bookDetail?id=4}">TRENDING IN 2020</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4 col-sm-6">
+						<div class="single-banner">
+							<a th:href="@{/bookDetail?id=5}">
+							<img th:src="#{adminPath}+@{/image/book/5}+'.jpg'" alt=""/>
+							</a>
+							<div class="banner-bottom text-center">
+								<a th:href="@{/bookDetail?id=5}">NEW RELEASES IN 2020</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4 col-sm-6">
+						<div class="single-banner">
+							<a th:href="@{/bookDetail?id=7}">
+							<img th:src="#{adminPath}+@{/image/book/7}+'.jpg'" alt=""/>
+							</a>
+							<div class="banner-bottom text-center">
+								<a th:href="@{/bookDetail?id=7}">NEW RELEASES IN 2020</a>
+							</div>
+						</div>
+					</div>
+					 
+					 
+					<div class="col-md-4 col-sm-6">
+						<div class="single-banner">
+							<a th:href="@{/bookDetail?id=8}">
+							<img th:src="#{adminPath}+@{/image/book/8}+'.jpg'" alt=""/>
+							</a>
+							<div class="banner-bottom text-center">
+								<a th:href="@{/bookDetail?id=8}">NEW RELEASES IN 2020</a>
 							</div>
 						</div>
 					</div>

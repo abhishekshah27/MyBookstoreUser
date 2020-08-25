@@ -32,14 +32,20 @@ public class User implements UserDetails{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id", nullable = false, updatable = false)
 	private Long id;
+	
+	@Column(unique = true)
 	private String username;
+	
 	private String password;
 	private String firstName;
 	private String lastName;
 	
-	@Column(name="email", nullable = false, updatable = false)
+	@Column(name="email", nullable = false, updatable = false, unique = true)
 	private String email;
+	
+	@Column(unique = true)
 	private String phone;
+	
 	private boolean enabled=true;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")

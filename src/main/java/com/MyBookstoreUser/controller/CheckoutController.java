@@ -87,7 +87,7 @@ public class CheckoutController {
 
 		if (cartId != user.getShoppingCart().getId())
 		{
-			return "badRequestPage";
+			return "error";
 		}
 
 		List<CartItem> cartItemList = cartItemService.findByShoppingCart(user.getShoppingCart());
@@ -180,7 +180,7 @@ public class CheckoutController {
 
 		if (userShipping.getUser().getId() != user.getId()) 
 		{
-			return "badRequestPage";
+			return "error";
 		} 
 		else 
 		{
@@ -233,7 +233,7 @@ public class CheckoutController {
 
 		if (userPayment.getUser().getId() != user.getId()) 
 		{
-			return "badRequestPage";
+			return "error";
 		} 
 		else
 		{

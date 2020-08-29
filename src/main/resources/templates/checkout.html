@@ -137,8 +137,9 @@
 										
 										<div class="col-xs-4">
 											<div class="form-group">
-												<label for="shippingZipcode">* ZIP code</label>
+												<label for="shippingZipcode">* ZIP code (6 digits)</label>
 												<input type="text" class="form-control" id="shippingZipcode" placeholder="Shipping Zipcode" required="required"
+														pattern="[0-9]{6}" maxlength="6" minlength="6"
 														th:name="shippingAddressZipcode" th:value="${shippingAddress.shippingAddressZipcode}" />
 											</div>
 										</div>
@@ -310,8 +311,9 @@
 										</div>
 										<div class="col-xs-4">
 											<div class="form-group">
-												<label for="billingZipcode">* ZIP code</label>
+												<label for="billingZipcode">* ZIP code(6 digits)</label>
 												<input type="text" class="form-control billingAddress" id="billingZipcode" placeholder="Billing Zipcode"
+													pattern="[0-9]{6}" maxlength="6" minlength="6"
 													th:name="billingAddressZipcode" required="required" th:value="${billingAddress.billingAddressZipcode}" />
 											</div>
 										</div>

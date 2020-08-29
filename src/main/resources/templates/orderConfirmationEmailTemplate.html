@@ -21,8 +21,10 @@
 </head>
 <body>
 	<p>Dear <span th:text="${user.firstName}"></span>,</p>
-	<p>Thank you for shopping from our book store. We hope you are having a good time with our services!</p>
-	<p>Your order number is: <strong>#<span th:text="${order.id}"></span></strong>. Here is your order detail:</p>
+	
+	<p>Your order number is: <strong>#<span th:text="${order.id}"></span></strong>. 
+		It will be delivered by:<span th:text="${order.shippingDate}"></span></p>
+	<p>Here is your order detail:</p>
 	<h2>Order Detail for purchase #<span th:text="${order.id}"></span></h2>
 	<hr/>
 
@@ -85,7 +87,7 @@
 		<tr>
 			<td class="emptyrow"></td>
 			<td class="emptyrow"></td>
-			<td class="emptyrow text-center"><strong>Tax</strong></td>
+			<td class="emptyrow text-center"><strong>Tax(6%)</strong></td>
 			<td class="emptyrow text-right" data-th-text="${#numbers.formatDecimal(order.orderTotal*0.06,0,2)}"></td>
 		</tr>
 		
@@ -100,6 +102,7 @@
 	</tbody>
 	</table>
 	
+	<p>Thank you for shopping from our book store. We hope you are having a good time with our services!</p>
 	<br/>
 	<p>Best,</p>
 	<p>Online Bookstore.</p>

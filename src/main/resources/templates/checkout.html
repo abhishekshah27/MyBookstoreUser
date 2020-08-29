@@ -30,7 +30,7 @@
 							</div>
 							
 							<div class="row">
-								<div class="col-xs-7 text-left">Estimated tax:</div>
+								<div class="col-xs-7 text-left">Tax(6%):</div>
 								<div class="col-xs-5 text-right">
 									₹<span th:with="tax=${shoppingCart.grandTotal*0.06}" 
 											th:text="${#numbers.formatDecimal(tax, 0 ,2)}"></span>
@@ -198,10 +198,11 @@
 													placeHolder="Card Holder Name" th:name="holderName" th:value="${payment.holderName}" />
 											</div>
 											<div class="form-group">
-												<label for="cardNumber">* Card Number:</label>
+												<label for="cardNumber">* Card Number: 16 digit(XXXXXXXXXXXXXXXX)</label>
 												<div class="input-group">
-													<input type="tel" class="form-control" id="cardNumber" required="required" 
-															placeHolder="Valid Card Number"	th:name="cardNumber" th:value="${payment.cardNumber}" />
+													<input type="text"  class="form-control" id="cardNumber" required="required" 
+															placeHolder="Enter your 16 digit valid card number" th:name="cardNumber" 
+															pattern="[0-9]{16}" maxlength="16" minlength="16" th:value="${payment.cardNumber}" />
 													<span class="input-group-addon">
 														<i class="fa fa-credit-card" aria-hidden="true"></i>
 													</span>
@@ -213,7 +214,7 @@
 									<div class="row">
 										<div class="col-xs-7">
 											<div class="form-group">
-												<label>* Expiration Date</label>
+												<label>* Expiry on:</label>
 												<div class="row">
 													<div class="col-xs-6">
 													
@@ -256,9 +257,10 @@
 											</div>
 										</div>
 										<div class="col-xs-5">
-											<div class="form-group">
-												<label for="cardCVV">CVV Code</label> 
-												<input id="cardCVV" type="tel"  class="form-control" name="cvv" placeholder="CVV"
+										<div class="form-group">
+												<label for="cardCVV">* CVV : 3 digits(XXX)</label> 
+												<input id="cardCVV" type="password"  class="form-control" name="cvv" 
+													 	pattern="[1-9]{1}[0-9]{2}" maxlength="3" minlength="3" placeholder="Enter 3 digits CVV number"	
 													 		th:name="cvv" th:value="${payment.cvv}" required="required"/>
 											</div>
 										</div>
@@ -332,12 +334,12 @@
 									<h4>Choose your shipping method:</h4>
 									<div class="radio">
 										<label> 
-											<input type="radio" name="shippingMethod" value="groundShipping" checked="checked" /> Ground Shipping
+											<input type="radio" name="shippingMethod" value="groundShipping" checked="checked" /> Ground Shipping(Delivery in 5 days)
 										</label>
 									</div>
 									<div class="radio">
 										<label> 
-											<input type="radio" name="shippingMethod" value="premiumShipping" /> Premium Shipping
+											<input type="radio" name="shippingMethod" value="premiumShipping" /> Premium Shipping(Delivery in 3 days)
 										</label>
 									</div>
 

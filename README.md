@@ -3,8 +3,8 @@ Book Store Project For User Side.
 A fully functional full-stack E-commerce Web Application developed using Spring Boot, Hibernate, MySQL, Thymeleaf, Bootstrap.
 
 ## Requirements
-1. JDK - 1.8
-2. MySQL - 5.5
+1. JDK 1.8
+2. MySQL 5.5
 3. Spring Tool Suite 4 
 4. Lombok JAR with installation in STS 4
 5. https://github.com/abhishekshah27/MyBookstoreAdmin (It should be configured and running simultaneously.)

@@ -63,7 +63,18 @@ ID: ```abhi``` Password: ```1234``` with **USER** role.
 + Add/update books in the database.
 + Activate or deactivate a book.
 + View orders.
- 
+
+## Functionalities [USER]
++ Register with email verification and login accordingly.
++ Browse all the books according to their favourable category.
++ Search a specific book by title.
++ Manage profile and change the password.
++ Manage shipping and billing addresses, add and update payment card details.
++ Add books to cart and check out by confirming address and payment details.
++ Use forget password Facility.
++ Get confirmation email after ordering the books .
++ Check previous orders.
+
 
 
 ## Authors

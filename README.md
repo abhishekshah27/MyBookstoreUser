@@ -42,7 +42,7 @@ mvnw spring-boot:run
 ```
 
 **6. Open your chrome browser and visit the below URLs** 
-+ It is required to run ADMIN project first and then the USER project.
++ **It is required to run ADMIN project first and then the USER project.**
 + The ADMIN appication will start running at <http://localhost:8081/adminportal>.
 + The USER appication will start running at <http://localhost:8080>.
 
@@ -80,8 +80,8 @@ ID: ```abhi``` Password: ```1234``` with **USER** role.
 
 
 ## Authors
-* Abhishek Shah
-* Priyal Shah
++ <a href="https://github.com/abhishekshah27/">Abhishek Shah</a>
++ <a href="https://github.com/priyalshah99/">Priyal Shah</a>
 
 ## License
 This project is not licensed as it is made for educational purpose only. You can use and learn from it for free.😊

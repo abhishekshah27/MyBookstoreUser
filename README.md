@@ -2,6 +2,8 @@
 Book Store Project For User Side.
 A fully functional full-stack E-commerce Web Application developed using Spring Boot, Hibernate, MySQL, Thymeleaf, Bootstrap.
 
+<img src="src/main/resources/static/img/logo.png" height=60px width=150>
+
 ## Requirements
 1. JDK 1.8
 2. MySQL 5.5

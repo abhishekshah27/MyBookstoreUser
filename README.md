@@ -34,7 +34,7 @@ create database MyBookstore
 + open `src/main/resources/application.properties` in both of the applications.
 + change `connection URL`, `username` and `password` as per your MySQL configuration in both of the applications.
 
-**5. Now you can run the app using maven for both the applications**
+**5. Now you can run the app using maven for both the applications from CMD**
 ```bash
 mvnw spring-boot:run
 ```

@@ -46,7 +46,7 @@ mvnw spring-boot:run
 + The ADMIN appication will start running at <http://localhost:8081/adminportal>.
 + The USER appication will start running at <http://localhost:8080>.
 
-## Logins
+## Application Logins
 
 Initially there are 2 users in memory:
 

@@ -21,10 +21,7 @@ public class Payment {
 	private Long id;
 	private String type;
 	private String cardName;
-	
-	@Column(unique = true)
-	private String cardNumber;
-	
+	private String cardNumber;	
 	private int expiryMonth;
 	private int expiryYear;
 	private int cvv;
